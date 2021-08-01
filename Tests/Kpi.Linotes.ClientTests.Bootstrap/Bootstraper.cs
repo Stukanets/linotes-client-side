@@ -1,15 +1,25 @@
 ﻿using System;
 using Autofac;
+using Kpi.Linotes.ClientTests.Domain.Login;
+using Kpi.Linotes.ClientTests.Model.Domain.Login;
+using Kpi.Linotes.ClientTests.Model.Domain.Main;
+using Kpi.Linotes.ClientTests.Model.Domain.Notes;
+using Kpi.Linotes.ClientTests.Model.Domain.Profile;
+using Kpi.Linotes.ClientTests.Model.Domain.UserInfo;
 using Kpi.Linotes.ClientTests.Model.Platform.Communication;
-using Kpi.Linotes.ClientTests.Model.Platform.Drivers;
 using Kpi.Linotes.ClientTests.Platform.Communication;
 using Kpi.Linotes.ClientTests.Platform.Configuration.Environment;
 using Kpi.Linotes.ClientTests.Platform.Configuration.Run;
 using Kpi.Linotes.ClientTests.Platform.Driver;
+using Kpi.Linotes.ClientTests.UI.Login;
+using Kpi.Linotes.ClientTests.UI.Main;
+using Kpi.Linotes.ClientTests.UI.Notes;
+using Kpi.Linotes.ClientTests.UI.Profile;
 using Microsoft.Extensions.Configuration;
 using RestSharp;
 using Serilog;
 using Serilog.Events;
+using IWebDriver = Kpi.Linotes.ClientTests.Model.Platform.Drivers.IWebDriver;
 
 namespace Kpi.Linotes.ClientTests.Bootstrap
 {
@@ -40,6 +50,13 @@ namespace Kpi.Linotes.ClientTests.Bootstrap
             Builder.RegisterType<RestClient>().As<IRestClient>().InstancePerDependency();
 
             // Logic
+            Builder.RegisterType<LoginContext>().As<ILoginContext>().SingleInstance();
+            Builder.RegisterType<LoginSteps>().As<ILoginSteps>().SingleInstance();
+            Builder.RegisterType<GetErrorSteps>().As<IGetErrorSteps>().SingleInstance();
+            Builder.RegisterType<UserInfoSteps>().As<IUserInfoSteps>().SingleInstance();
+            Builder.RegisterType<PageLabelSteps>().As<IPageLabelSteps>().SingleInstance();
+            Builder.RegisterType<OpenProfileSteps>().As<IOpenProfileSteps>().SingleInstance();
+
             Builder.RegisterType<WebDriver>().As<IWebDriver>().SingleInstance();
         }
     }
