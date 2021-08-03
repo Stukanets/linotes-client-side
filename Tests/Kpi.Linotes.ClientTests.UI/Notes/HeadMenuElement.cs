@@ -7,7 +7,7 @@ namespace Kpi.Linotes.ClientTests.UI.Notes
 {
     public class HeadMenuElement : HtmlElement
     {
-        [FindBy(How.XPath, "//div/ul/li[2]/a")]
+        [FindBy(How.XPath, "//a[@href='/profile/']")]
         public HtmlButton CabinetButton { get; set; }
     }
 }

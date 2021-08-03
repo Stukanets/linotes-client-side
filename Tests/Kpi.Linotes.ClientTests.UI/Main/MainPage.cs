@@ -12,7 +12,7 @@ namespace Kpi.Linotes.ClientTests.UI.Main
         {
         }
 
-        [FindBy(How.XPath, "//*[@id='loginform']")]
+        [FindBy(How.XPath, "//form[@id='loginform']")]
         public LoginFormElement LoginForm { get; set; }
     }
 }

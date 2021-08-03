@@ -12,10 +12,10 @@ namespace Kpi.Linotes.ClientTests.UI.Notes
         {
         }
 
-        [FindBy(How.XPath, "//*[@id='left-component']")]
+        [FindBy(How.XPath, "//div[@id='left-component']")]
         public LeftBarElement LeftBar { get; set; }
 
-        [FindBy(How.XPath, "//*[@id='block_nav']")]
+        [FindBy(How.XPath, "//div[@id='block_nav']")]
         public HeadMenuElement HeadMenu { get; set; }
     }
 }

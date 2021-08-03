@@ -7,13 +7,13 @@ namespace Kpi.Linotes.ClientTests.UI.Main
 {
     public class LoginFormElement : HtmlElement
     {
-        [FindBy(How.XPath, "//*[@id='user_login']")]
+        [FindBy(How.XPath, "//input[@id='user_login']")]
         public HtmlTextBox LoginTextBox { get; set; }
 
-        [FindBy(How.XPath, "//*[@id='user_pass']")]
+        [FindBy(How.XPath, "//input[@id='user_pass']")]
         public HtmlTextBox PasswordTextBox { get; set; }
 
-        [FindBy(How.XPath, "//*[@id='wp-submit']")]
+        [FindBy(How.XPath, "//input[@id='wp-submit']")]
         public HtmlButton LoginButton { get; set; }
     }
 }

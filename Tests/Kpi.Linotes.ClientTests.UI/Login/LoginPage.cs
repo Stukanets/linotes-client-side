@@ -13,7 +13,7 @@ namespace Kpi.Linotes.ClientTests.UI.Login
         {
         }
 
-        [FindBy(How.XPath, "//*[@id='login_error']/strong")]
+        [FindBy(How.XPath, "//div[@id='login_error']/strong")]
         public HtmlLabel ErrorMessage { get; set; }
     }
 }
